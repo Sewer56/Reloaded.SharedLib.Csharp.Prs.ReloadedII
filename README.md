@@ -5,6 +5,7 @@
 	<strong>Sharing is Caring</strong>
     <p>I don't know much about sharing Hookers<br/>
     but having some common Blackjack is ok.</p>
+<b>Id: reloaded.sharedlib.hooks</b>
 </div>
 
 # Table of Contents
@@ -18,6 +19,7 @@
       - [Supporting Actively Developed Applications](#supporting-actively-developed-applications)
   - [Are There Dangers](#are-there-dangers)
   - [How to Use (End Users)](#how-to-use-end-users)
+  - [How to Use (Developers)](#how-to-use-developers)
 
 
 # About This Project
@@ -49,7 +51,9 @@ When individual mods have their own isolated libraries loaded, each library's co
 
 When you use a shared library, as the code is shared, it only becomes JIT-ted once. We go from a JIT startup overhead of 0.9s to 0.2s.
 
-*<TODO: Insert Image of Improved Loads After Switching Mods to Shared Lib>*
+![LoadTimeExampleAfter](./Images/LoadTimeExampleAfter.png)
+
+*268ms! Then the library is loaded and all other mods do not suffer such long setup times.*
 
 #### Small Mod Sizes & Low Memory Usage
 
@@ -85,7 +89,7 @@ Shared libraries should then make use of [Pattern Scanning / Signature Scanning]
 **\*Getting variables:** Use signature scanning to find an instruction that accesses a given variable.
 
 ```
-mov     levelId, edx			// 89 15 [?? ?? ?? ??] <= Level ID
+mov     levelId, edx            // 89 15 [?? ?? ?? ??] <= Level ID
 jmp     short loc_4354A1 		// EB OB
 mov     someOtherVariable, eax  // A3 ?? ?? ?? ??
 
@@ -117,3 +121,15 @@ Note: The mod loader provides protection against sharing unnecessary libraries b
 **A.** Install Reloaded mod as usual.
 
 **B.** Nothing else needs to be done. This mod will be auto-enabled if required by other mods.
+
+## How to Use (Developers)
+Using a shared library is identical to using a **Controller** in Inter Mod Communication.
+
+**A.** Add the NuGet Package *Reloaded.SharedLib.Hooks* to your project: <a href="https://www.nuget.org/packages/Reloaded.SharedLib.Hooks"><img src="https://img.shields.io/nuget/v/Reloaded.SharedLib.Hooks.svg" alt="NuGet" /></a>
+
+**B.** Add `reloaded.sharedlib.hooks` as a dependency of the mod `(in ModConfig.json)`.
+
+**C.** Use like a regular **Controller** via [Inter-Mod-Communication](https://github.com/Reloaded-Project/Reloaded-II/blob/master/Docs/InterModCommunication.md#required-dependencies)
+
+Of course, you should also download and extract the shared library (mod) to your mods folder.
+

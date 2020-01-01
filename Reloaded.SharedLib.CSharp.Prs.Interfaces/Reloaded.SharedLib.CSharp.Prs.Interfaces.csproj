@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageId>Reloaded.SharedLib.CSharp.Prs.Interfaces</PackageId>
+    <Authors>Sewer56</Authors>
+    <Product />
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <Description>Contains the interfaces that expose csharp-prs as a Reloaded II (Reloaded Mod Loader II) shared library.</Description>
+    <Copyright>LGPL V3</Copyright>
+    <PackageProjectUrl>https://github.com/Sewer56/Reloaded.SharedLib.Csharp.Prs.ReloadedII</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Sewer56/Reloaded.SharedLib.Csharp.Prs.ReloadedII</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageIconUrl>https://avatars1.githubusercontent.com/u/45473408</PackageIconUrl>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <Version>1.0.0</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="csharp-prs-interfaces" Version="1.0.0" />
+  </ItemGroup>
+
+</Project>
