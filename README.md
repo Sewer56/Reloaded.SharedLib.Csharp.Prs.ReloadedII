@@ -15,13 +15,10 @@ This is a Reloaded II shared library. For more information refer to Shared Libra
 
 **B.** Nothing else needs to be done. This mod will be auto-enabled if required by other mods.
 
-## How to Use (Developers)
-Using a shared library is identical to using a **Controller** in Inter Mod Communication.
+## How to Use The API (Programmers)
 
-**A.** Add the NuGet Package *Reloaded.SharedLib.CSharp.Prs.Interfaces* to your project: <a href="https://www.nuget.org/packages/Reloaded.SharedLib.CSharp.Prs.Interfaces"><img src="https://img.shields.io/nuget/v/Reloaded.SharedLib.CSharp.Prs.Interfaces.svg" alt="NuGet" /></a>
+- Add the `Reloaded.SharedLib.CSharp.Prs.Interfaces` NuGet package to your project.
+- Add the dependency `reloaded.sharedlib.csharp.prs` to `ModDependencies` in your `ModConfig.json`. 
+- In your `Start()` function, acquire the Controller `_modLoader.GetController<IRedirectorController>()`
 
-**B.** Add `reloaded.sharedlib.csharp.prs` as a dependency of the mod `(in ModConfig.json)`.
-
-**C.** Use like a regular **Controller** via [Inter-Mod-Communication](https://github.com/Reloaded-Project/Reloaded-II/blob/master/Docs/InterModCommunication.md#required-dependencies)
-
-Of course, you should also download and extract the shared library (mod) to your mods folder.
+For more information and best practices, refer to [Reloaded-II Docs: Inter Mod Communication](https://reloaded-project.github.io/Reloaded-II/InterModCommunication/).
