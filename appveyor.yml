@@ -36,8 +36,8 @@ build_script:
     }
 
     # Build & Pack the Library
-    dotnet build ./Reloaded.SharedLib.CSharp.Prs.Interfaces/Reloaded.SharedLib.CSharp.Prs.Interfaces.csproj
-    dotnet pack ./Reloaded.SharedLib.CSharp.Prs.Interfaces/Reloaded.SharedLib.CSharp.Prs.Interfaces.csproj -o ./Publish/nuget.org
+    dotnet build -c Release ./Reloaded.SharedLib.CSharp.Prs.Interfaces/Reloaded.SharedLib.CSharp.Prs.Interfaces.csproj
+    dotnet pack -c Release ./Reloaded.SharedLib.CSharp.Prs.Interfaces/Reloaded.SharedLib.CSharp.Prs.Interfaces.csproj -o ./Publish/nuget.org
 artifacts:
 - path: ./Publish/*.zip
   name: Compiled Mod(s)

@@ -2,7 +2,7 @@
   "ModId": "reloaded.sharedlib.csharp.prs",
   "ModName": "Reloaded II Shared Lib: CSharp.Prs",
   "ModAuthor": "Sewer56",
-  "ModVersion": "1.0.1",
+  "ModVersion": "1.0.2",
   "ModDescription": "Lite Implementation of Sewer56's SEGA PRS Compression/Decompression library as a mod loader shared library.",
   "ModDll": "Reloaded.SharedLib.CSharp.Prs.dll",
   "ModIcon": "Preview.png",
